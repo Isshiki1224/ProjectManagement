@@ -1,0 +1,28 @@
+upload-path: C:\Users\ysq2008\Desktop\picture
+
+spring:
+  elasticsearch:
+    jest:
+      uris: http://localhost:9200
+  resources:
+    static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,file:${upload-path}
+
+  thymeleaf:
+    cache: false
+
+  application:
+    name: newsManagement
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 40.73.162.1:8848
+
+  mvc:
+    date-format: yyyy-MM-dd
+    static-path-pattern: /**
+
+server:
+  tomcat:
+    uri-encoding: UTF-8
+  port: 8083
